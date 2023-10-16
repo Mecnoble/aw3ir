@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="stylesheet" type="text/css" href="style.css/">
     <!-- Place favicon.ico in the root directory -->
 
     <style>
@@ -20,132 +21,178 @@
       }
       table,th,td{
         border : 1px solid;
+      } td:first-child {
+  background-color: white;
+  color: black;
+}
+td:nth-child(2) {
+  background-color: black;
+  color: white; 
+} 
+
+.container {
+  background-color: rgb(26, 82, 112); 
+  padding: 5px; 
+}
+
+table {
+  background-color: white;
+}
+
+h1{
+        text-align: center;
+      }
+      div {
+      border: 4px solid;
+      border-color: #1c87c9 #666 #8ebf42;
+      padding: 5px;
+
+
+     
       }
       </style>
 
   </head>
+
+  <div class="container">
+
   <body>
+    <table>
+    <table width="100%">
     <h1>TP 1</h1>
-    <h2>Mes Cordonnées</h2>
+    <h1>MES COORDONNEES</h1>
 
-
-   <table width="100%">
     <tr>
-        <td>Nom Prenom</td>
-        <td>Thiam Alex</td>
+        <td scope="col">Nom Prenom</td>
+        <td>DIOP Demba</td>
     </tr>
-   </table>
-   <table width="100%">
+   
     <tr>
         <td>Adresse</td>
         <td>Paris 17eme</td>
         
     </tr>
-   </table>
-   <table width="100%">
+   
+   
     <tr>
         <td>Situation</td>
         <td>Célibataire</td>
         
     </tr>
-   </table>
-   <table width="100%">
-    <tr>
-        <td>Adresse</td>
-        <td>Paris 17eme</td>
-        
-    </tr>
-   </table>
-   <table width="100%">
+
+  
     <tr>
         <td>Permis</td>
         <td>Véhiculé B1</td>
         
     </tr>
-   </table>
-   <table width="100%">
+   
+   
     <tr>
-        <td>Adresse</td>
-        <td>Paris 17eme</td>
+        <td>Email</td>
+        <td>Demba.diop@univ-paris13.fr</td>
         
     </tr>
-   </table>
+    <tr>
+      <td>Téléphone</td>
+        <td>07 53 24 69 42</td>
+    </tr>
+  </table>
    
    <h1>
     Ingénieur en Génie Mecanique
-   </h1>
-   <br>
-   <h1>Formations</h1>
-   <table>
-    <tr>
-   <table width="100%">
-    <td>Année 2020-2021</td>
-    <td>Licence 2 physique</td>
-     </table>
+  </h1>
+  <h1>FORMATIONS</h1>
 
-     <table width="100%">
+  <table width="100%">
+   
+    <tr>
+
+        <td>Année 2020-2021</td>
+       <td>Licence 2 physique</td>
+    
+    <tr>
+      <tr>
+     
         <td>Année 2021-2022</td>
         <td>Licence 3 Science Pour Ingénieur</td>
-         </table>
-          <table width="100%">
-    <td>Année 2020-2021</td>
-    <td>Master 1 Ingénierie Innovation Image et Réseau</td>
-     </tr>
-    </table>
-</table>
+      <tr>   
 
-<h1>Compétences</h1>
-<table width="100%">
-    <tr>
-        <table width="100%">
-            <tr>
-                <td>Developpement</td>
-                <td>JAVA7, HTML</td>
-            </tr>
-        </table>
-        <table width="100%">
-            <tr>
-                <td>Base de Donnée</td>
-                <td>MYSQL, PostegreSQL</td>
-            </tr>
-        </table>
-        <table width="100%">
-            <tr>
-                <td>Réseau</td>
-                <td>IPV6, LAN, WIFI</td>
-            </tr>
-        </table>
-        <table width="100%">
-            <tr>
-                <td>LANGUES</td>
-                <td>Anglais:BILINGUE, Français: MATERNELLE</td>
-            </tr>
-        </table>
+    <tr>    
+          
+        <td>Année 2020-2021</td>
+        <td>Master 1 Ingénierie Innovation Image et Réseau</td>
     </tr>
+    
 </table>
-<h1>EXPERIENCES</h1>
-<table>
-    <tr>
-        <table width="100%">
-            <tr>
-                <td>2020-2021</td>
-                <td>Stage de Fin d'étude chez Orange</td>
 
-            </tr>
-        </table>
-        <table width="100%">
+<h1>COMPETENCES</h1>
+<table width="100%">
+     <tr>
+           
+          <td>Developpement</td>
+          <td>JAVA7, HTML</td>
+
+     <tr> 
+        
+        
+      <tr>
+          <td>Base de Donnée</td>
+          <td>MYSQL, PostegreSQL</td>
+      </tr>
+        
+       
+       <tr>
+            <td>Réseau</td>
+            <td>IPV6, LAN, WIFI</td>
+        </tr>
+        
+        
+        <tr>
+            <td>LANGUES</td>
+            <td>Anglais:BILINGUE, Français: MATERNELLE</td>
+
+        </tr>
+        
+      </table>
+
+<h1>EXPERIENCES</h1>
+<table width="100%">
+        <tr>
+            <td>2020-2021</td>
+            <td>Stage de Fin d'étude chez Fablab Villetaneuse</td>
+
+        </tr>
+        
+        
             <tr>
                 <td>2021-2022</td>
-                <td>Stage de 3mois chez EDF</td>
+                <td>Stage de 3mois chez KYNDRYL</td>
             </tr>
-        </table>
-        <table width="100%">
+        
+        
             <tr>
                 <td>2022-2023</td>
                 <td>Equipiers polyvalent chez McDonald's</td>
             </tr>
-        </table>
-    </tr>
+ </table>   
+  
+<h1>CENTRE D'INTERET</h1>
+<table width="100%">
+      <tr>
+        <td>SPORT</td>
+        <td>BasketBall, Musculation,</td>
+      </tr>
+      <tr>
+        <td>Culture</td>
+        <td>Monument, Musé</td>
+      </tr>
+      <tr>
+        <td>Voyage</td>
+        <td>Angleterre, Algerie, Palestine</td>
+      </tr>
 </table>
+</table>
+</div>
   </body>
 </html>
