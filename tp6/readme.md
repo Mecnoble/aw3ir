@@ -308,12 +308,14 @@ Pour que ce component soit affiché sur la page web, il faut l'ajouter à l'él�
 
 ## 4.2. Fomulaire : ajout du module FormModule
 
-Pour utiliser des formulaires avec Anguler il fait référencer les module ```FormModule, ReactiveFormsModule```.
+Pour utiliser des formulaires avec Anguler il fait référencer les module ```BrowserModule, FormModule, ReactiveFormsModule```.
 
 Dans le fichier ```src\app\app.module.ts``` ajouter le ainsi:
 
 ```ts
 // debut du fichier
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 
@@ -332,8 +334,7 @@ import { MeteoComponent } from './meteo/meteo.component';
 
   ],
   imports: [
-    BrowserModule,
-    FormsModule, 
+    BrowserModule, FormsModule, ReactiveFormsModule
     // <-- dans la suite du TP, Ajouter les références aux autres modules ici
   ],
   providers: [DatePipe],
@@ -652,7 +653,7 @@ export class MeteoService {
         // test du code retour
         // 200 = OK
         // 404 = city not found 
-        if (json.cod === 200) {
+        if (json.cod == 200) {
           return Promise.resolve(json);
         } else {
           console.error('Météo introuvable pour ' + name + ' (' + json.message + ')');
@@ -729,7 +730,7 @@ Code HTML pour mettre en forme les données reçues :
 ```html
 <!-- meteo de la ville selectionnée -->
 <!-- meteo de la ville selectionnée -->
-<div *ngIf="meteo && meteo.cod === 200">
+<div *ngIf="meteo && meteo.cod == 200">
 
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -784,7 +785,7 @@ Code HTML pour mettre en forme les données reçues :
   </div>
 </div>
 
-<div class="alert alert-danger" *ngIf="meteo && meteo.cod !== 200">
+<div class="alert alert-danger" *ngIf="meteo && meteo.cod != 200">
 
   {{meteo.message}} (erreur {{meteo.cod}})
 </div>
