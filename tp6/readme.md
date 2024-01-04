@@ -177,7 +177,7 @@ Pour mieux comprendre l'architecture : https://angular.io/guide/architecture
 ```
 cd meteo-angular
 npm install --save bootstrap
-npm install --save weather-icons
+npm install --save git+https://git@github.com/erikflowers/weather-icons.git
 ```
 
 ```--save``` permet de référencer ces packages dans notre fichier de d'installation ```package.json```
