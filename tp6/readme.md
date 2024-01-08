@@ -101,24 +101,31 @@ Vérification : entrer
 ng version
 ```
 
-La version d'Angular CLI devrait s'afficher:
+La version d'Angular CLI devrait s'afficher: (à ce jour ,le 08 janvier 2024, la version est la **17**)
 ```cmd
 ng version
 
-    _                      _                 ____ _     ___
-   / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
-  / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
- / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
-/_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
-               |___/
+     _                      _                 ____ _     ___
+    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+ /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+                |___/
 
-Angular CLI: 14.2.10       
-Node: 16.13.1
-Package Manager: npm 8.1.2 
+Angular CLI: 17.0.9
+Node: 18.17.1
+Package Manager: npm 9.6.7
 OS: win32 x64
 
-Angular: 14.2.12
+Angular:
 ...
+
+Package                      Version
+------------------------------------------------------
+@angular-devkit/architect    0.1700.9 (cli-only)
+@angular-devkit/core         17.0.9 (cli-only)
+@angular-devkit/schematics   17.0.9 (cli-only)
+@schematics/angular          17.0.9 (cli-only)
 ```
 
 ## 2.1. Créer un nouveau projet avec ng-cli
@@ -129,7 +136,7 @@ cd /mon-repertoire/du-tp-6/
 ```
 Création du projet ```meteo-angular```
 ```cmd
-ng new meteo-angular
+ng new meteo-angular --standalone=false
 ```
 
 Pour les options d'installation, répondre : 
