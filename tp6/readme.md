@@ -101,24 +101,31 @@ Vérification : entrer
 ng version
 ```
 
-La version d'Angular CLI devrait s'afficher:
+La version d'Angular CLI devrait s'afficher: (à ce jour ,le 08 janvier 2024, la version est la **17**)
 ```cmd
 ng version
 
-    _                      _                 ____ _     ___
-   / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
-  / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
- / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
-/_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
-               |___/
+     _                      _                 ____ _     ___
+    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+ /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+                |___/
 
-Angular CLI: 14.2.10       
-Node: 16.13.1
-Package Manager: npm 8.1.2 
+Angular CLI: 17.0.9
+Node: 18.17.1
+Package Manager: npm 9.6.7
 OS: win32 x64
 
-Angular: 14.2.12
+Angular:
 ...
+
+Package                      Version
+------------------------------------------------------
+@angular-devkit/architect    0.1700.9 (cli-only)
+@angular-devkit/core         17.0.9 (cli-only)
+@angular-devkit/schematics   17.0.9 (cli-only)
+@schematics/angular          17.0.9 (cli-only)
 ```
 
 ## 2.1. Créer un nouveau projet avec ng-cli
@@ -129,7 +136,7 @@ cd /mon-repertoire/du-tp-6/
 ```
 Création du projet ```meteo-angular```
 ```cmd
-ng new meteo-angular
+ng new meteo-angular --standalone=false
 ```
 
 Pour les options d'installation, répondre : 
@@ -177,7 +184,7 @@ Pour mieux comprendre l'architecture : https://angular.io/guide/architecture
 ```
 cd meteo-angular
 npm install --save bootstrap
-npm install --save weather-icons
+npm install --save git+https://git@github.com/erikflowers/weather-icons.git
 ```
 
 ```--save``` permet de référencer ces packages dans notre fichier de d'installation ```package.json```
@@ -308,12 +315,14 @@ Pour que ce component soit affiché sur la page web, il faut l'ajouter à l'él�
 
 ## 4.2. Fomulaire : ajout du module FormModule
 
-Pour utiliser des formulaires avec Anguler il fait référencer les module ```FormModule, ReactiveFormsModule```.
+Pour utiliser des formulaires avec Anguler il fait référencer les module ```BrowserModule, FormModule, ReactiveFormsModule```.
 
 Dans le fichier ```src\app\app.module.ts``` ajouter le ainsi:
 
 ```ts
 // debut du fichier
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 
@@ -332,8 +341,7 @@ import { MeteoComponent } from './meteo/meteo.component';
 
   ],
   imports: [
-    BrowserModule,
-    FormsModule, 
+    BrowserModule, FormsModule, ReactiveFormsModule
     // <-- dans la suite du TP, Ajouter les références aux autres modules ici
   ],
   providers: [DatePipe],
@@ -652,7 +660,7 @@ export class MeteoService {
         // test du code retour
         // 200 = OK
         // 404 = city not found 
-        if (json.cod === 200) {
+        if (json.cod == 200) {
           return Promise.resolve(json);
         } else {
           console.error('Météo introuvable pour ' + name + ' (' + json.message + ')');
@@ -729,7 +737,7 @@ Code HTML pour mettre en forme les données reçues :
 ```html
 <!-- meteo de la ville selectionnée -->
 <!-- meteo de la ville selectionnée -->
-<div *ngIf="meteo && meteo.cod === 200">
+<div *ngIf="meteo && meteo.cod == 200">
 
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -784,7 +792,7 @@ Code HTML pour mettre en forme les données reçues :
   </div>
 </div>
 
-<div class="alert alert-danger" *ngIf="meteo && meteo.cod !== 200">
+<div class="alert alert-danger" *ngIf="meteo && meteo.cod != 200">
 
   {{meteo.message}} (erreur {{meteo.cod}})
 </div>

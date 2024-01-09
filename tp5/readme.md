@@ -20,7 +20,7 @@ TP du jour
 
 - [0. Prérequis (⚠ important)](#0-prérequis--important)
 - [1. OpenWeatherMap - générer votre API Key](#1-openweathermap---générer-votre-api-key)
-- [2. Installer NodeJS & un serveur web](#2-installer-nodejs--un-serveur-web)
+- [2. Installer NodeJS \& un serveur web](#2-installer-nodejs--un-serveur-web)
 - [2.1 Plateforme de dév](#21-plateforme-de-dév)
 - [Developpement d'une application web pour connaitre la méteo des villes demandées de l'utilisateur.](#developpement-dune-application-web-pour-connaitre-la-méteo-des-villes-demandées-de-lutilisateur)
 - [3. Initialisation de l'application VUEjs](#3-initialisation-de-lapplication-vuejs)
@@ -381,7 +381,7 @@ meteo : function (_city){
             // test du code retour
             // 200 = OK
             // 404 = city not found 
-            if(json.cod === 200){
+            if(json.cod == 200){
                 // on met la réponse du webservice dans la variable cityWeather
                 app.cityWeather = json;
                 app.message = null;
